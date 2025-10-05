@@ -5,5 +5,5 @@
 
     <p class="my-5">...</p>
 
-    <footer>Todos os Direitos Reservados: ...</footer>
+    <footer>Todos os Direitos Reservados: Luciano Eduardo Stefanello da Silva</footer>
 @endsection
