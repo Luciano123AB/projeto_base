@@ -16,8 +16,12 @@ Route::get("/", function () {
         $banco = false;
     }
         
-    if ($banco == false || !session("boot")) {
-        Boot::comandos();
+    if ($banco == false) {
+        Boot::criarPovoarBanco();
+    }
+
+    if (is_dir(base_path("vendor")) || is_dir(base_path("node_modules"))) {
+        Boot::dependencias();
     }
     
     return view("index");
