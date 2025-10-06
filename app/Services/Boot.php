@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Artisan;
 class Boot
 {
     public static function criarPovoarBanco() {
-        Artisan::call("migrate", [
+        Artisan::call("", [
             "--force" => true
         ]);
-        Artisan::call("db:seed", [
-            "--class" => "UsuariosTableSeeder",
+        Artisan::call("", [
+            "--class" => "",
             "--force" => true
         ]);
 
