@@ -6,7 +6,17 @@ use App\Services\Boot;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/", function () {
-    if (!session("boot")) {
+    
+    $banco = null;
+
+    try {
+        DB::connection()->getPdo();
+        $banco = true;
+    } catch (\Exception $e) {
+        $banco = false;
+    }
+        
+    if ($banco == false || !session("boot")) {
         Boot::comandos();
     }
     
