@@ -7,14 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/", function () {
     
-    $banco = null;
-
-    try {
-        DB::connection()->getPdo();
-        $banco = true;
-    } catch (\Exception $e) {
-        $banco = false;
-    }
+    $banco = Boot::testarConexao();
         
     if ($banco == false) {
         Boot::criarPovoarBanco();
