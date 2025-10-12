@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Artisan;
 
 class Boot
 {
+    public static function testarConexao() {
+        //
+    }
+    
     public static function criarPovoarBanco() {
         Artisan::call("", [
             "--force" => true
