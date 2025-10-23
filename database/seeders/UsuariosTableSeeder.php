@@ -14,7 +14,11 @@ class UsuariosTableSeeder extends Seeder
     {
         DB::table("usuarios")->insert([
             [
-                "usuario" => "usuario01@gmail.com"
+                "nome_completo" => "Usuário 01",
+                "data_nascimento" => "00/00/0000",
+                "foto" => "iVBORw0KGg...",
+                "permissao" => 1,
+                "ultimo_acesso" => "00/00/0000 00:00:00"
             ]
         ]);
     }

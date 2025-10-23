@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 
 class Boot
 {
@@ -12,20 +13,24 @@ class Boot
 
         try {
             DB::connection()->getPdo();
+
             $banco = true;
+
         } catch (\Exception $e) {
+
             $banco = false;
+            
         }
 
         return $banco;
     }
     
     public static function criarPovoarBanco() {
-        Artisan::call("", [
+        Artisan::call("migrate", [
             "--force" => true
         ]);
-        Artisan::call("", [
-            "--class" => "",
+        Artisan::call("db:seed", [
+            "--class" => "UsuariosTableSeeder",
             "--force" => true
         ]);
 
