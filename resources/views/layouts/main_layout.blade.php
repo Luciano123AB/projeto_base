@@ -7,7 +7,7 @@
     <title>Projeto: Projeto Limpo</title>
     @include("layouts.partials.links")
 </head>
-<body class="text-center fst-italic">
+<body class="bg-light text-center fst-italic">
     @yield("content")
 
     @include("layouts.partials.scripts")
